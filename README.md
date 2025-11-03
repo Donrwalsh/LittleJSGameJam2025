@@ -164,6 +164,12 @@ Dang that was obnoxious. Turns out I was pulling in `tsc` in the dependencies wh
 
 Ooook, this ran but didn't produce any sort of distributable. Neat. I've wasted a lot of time on this and it has me getting annoyed. I'm going to work on something else and come back at this part later with fresh eyes.
 
+Oof, I was just missing a box2d init call. That's annoying.
+
+Found out if you do the exploding variables thing with mousePos it doesn't report the value properly.
+
+Working on there being a line drawn from the ball to the cursor when you are winding up a shot. I tried to get it to be a dashed line but got bogged down with vector math. I think I'll just use a solid line for now and get to work on the actual strike behavior.
+
 ## TODO:
 
 - [ ] Publishing the game and submitting it to the Jam.
