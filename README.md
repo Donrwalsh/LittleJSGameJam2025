@@ -160,6 +160,10 @@ Running the build file, I kept getting errors with npx. Running `>npm install -g
 
 Ok, this is feeling like a waste of time. I'm going to work off a supplied project and publish that. I am glad I'm looking into this now because I do not find it explained very well at all.
 
+Dang that was obnoxious. Turns out I was pulling in `tsc` in the dependencies which was causing issues with the actually needed `typescript` package. Never change npm.
+
+Ooook, this ran but didn't produce any sort of distributable. Neat. I've wasted a lot of time on this and it has me getting annoyed. I'm going to work on something else and come back at this part later with fresh eyes.
+
 ## TODO:
 
 - [ ] Publishing the game and submitting it to the Jam.
