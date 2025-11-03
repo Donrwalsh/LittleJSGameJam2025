@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "littlejsengine": "^1.16.2"
+  },
+  "scripts": {
+    "build": "node node_modules/littlejsengine/src/engineBuild.js"
+  }
+}

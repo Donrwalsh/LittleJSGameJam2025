@@ -154,6 +154,12 @@ Ok yeah, did some more research and this question has been posed before on the d
 
 I want to put a ball on the screen so I'm going to create an empty project in this repo. I'm using the empty project example provided by LittleJS and I'm downloading the latest release and placing that in a dist folder so my local preview will work. This makes me think about how I need to figure out what launching a game looks like so I'll make a todo section and add that to it.
 
+In working to get a ball on the screen, I'm having trouble with my local behaving properly when it comes to Box2dObject. I'm thinking maybe this is because I didn't run an npm install of LittleJS? `>npm install littljsengine`.
+
+Running the build file, I kept getting errors with npx. Running `>npm install -g uglifyjs` didn't help because what I really needed was `>npm install -g uglify-js`. Now it's failing at the run TypeScript build step and `>npm install -g tsc` didn't make any difference.
+
+Ok, this is feeling like a waste of time. I'm going to work off a supplied project and publish that. I am glad I'm looking into this now because I do not find it explained very well at all.
+
 ## TODO:
 
 - [ ] Publishing the game and submitting it to the Jam.
