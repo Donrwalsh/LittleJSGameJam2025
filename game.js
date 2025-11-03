@@ -12,6 +12,9 @@ import * as Ball from "./ball.js";
 
 let playerBall;
 let aimingShot = false;
+let makingShot = false;
+let storedMousePos = { x: 0, y: 0 };
+let shotTimer = new LJS.Timer();
 
 const { vec2, rgb, hsl, isOverlapping } = LJS;
 
@@ -28,24 +31,33 @@ function gameUpdate() {
   // called every frame at 60 frames per second
   // handle input and update the game state
 
-  if (aimingShot) {
-    if (LJS.mouseIsDown(0)) {
-      console.log("still aiming");
-    }
-    if (LJS.mouseWasReleased(0)) {
-      console.log("perform shot");
-      aimingShot = false;
-    }
-  } else {
-    if (isOverlapping(vec2(-6, 0), vec2(1), LJS.mousePos)) {
-      document.body.style.cursor = "crosshair";
-      if (LJS.mouseWasPressed(0)) {
-        aimingShot = true;
+  if (!makingShot) {
+    if (aimingShot) {
+      storedMousePos = LJS.mousePos;
+      if (LJS.mouseIsDown(0)) {
+        console.log("still aiming");
+      }
+      if (LJS.mouseWasReleased(0)) {
+        console.log("perform shot");
+        aimingShot = false;
+        makingShot = true;
+        playerBall.hitTheBall();
+        // storedMousePos = LJS.mousePos;
+        document.body.style.cursor = "auto";
+        shotTimer.set(1);
       }
     } else {
-      document.body.style.cursor = "auto";
+      if (isOverlapping(vec2(-6, 0), vec2(1), LJS.mousePos)) {
+        document.body.style.cursor = "crosshair";
+        if (LJS.mouseWasPressed(0)) {
+          aimingShot = true;
+        }
+      } else {
+        document.body.style.cursor = "auto";
+      }
     }
   }
+  console.log(1 - shotTimer.getPercent());
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -60,6 +72,15 @@ function gameRender() {
   // draw any background effects that appear behind objects
   if (aimingShot) {
     LJS.drawLine(playerBall.pos, LJS.mousePos, 0.1);
+  }
+  if (makingShot) {
+    // console.log(playerBall.pos);
+    // LJS.drawLine(
+    //   playerBall.pos,
+    //   storedMousePos.minus(playerBall).scale(1 - shotTimer.getPercent()),
+    //   0.1,
+    //   LJS.WHITE
+    // );
   }
 
   // Working on getting a dashed line here. In progress.

@@ -170,6 +170,10 @@ Found out if you do the exploding variables thing with mousePos it doesn't repor
 
 Working on there being a line drawn from the ball to the cursor when you are winding up a shot. I tried to get it to be a dashed line but got bogged down with vector math. I think I'll just use a solid line for now and get to work on the actual strike behavior.
 
+So the way I have it working you pull back from the ball and get the white line. Upon releasing the mouse the strike is performed immediately and generally the result is the ball flying off the screen. I want to improve this mechanism itself, but I think that's mostly a distraction for now. Next up I'd like to add some basic walls and then the hole so I can work with ricochets and sinking the ball!
+
+I'm using the pool-ball sound from the box2d example. Would be nice to figure out how to make more appropriate golf-ball hitting sounds. Won't add a new TODO since this is already tracked, but just wanted to mention it!
+
 ## TODO:
 
 - [ ] Publishing the game and submitting it to the Jam.

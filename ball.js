@@ -1,5 +1,8 @@
 import * as LJS from "../../dist/littlejs.esm.js";
-const { vec2, Box2dObject, hsl, drawLine } = LJS;
+const { vec2, Box2dObject, hsl, drawLine, Sound } = LJS;
+
+const hitSound = new Sound([, 0.1, 2e3, , , 0.01, , , , , , , , 1]);
+const maxHitDistance = 6;
 
 export class Ball extends Box2dObject {
   constructor(position) {
@@ -17,6 +20,14 @@ export class Ball extends Box2dObject {
 
   canHit() {
     return this.getSpeed() < 1;
+  }
+
+  hitTheBall() {
+    const deltaPos = LJS.mousePos.subtract(this.pos);
+    const length = LJS.min(deltaPos.length(), maxHitDistance);
+    const hitOffset = deltaPos.normalize(length);
+    this.applyAcceleration(hitOffset.scale(-8));
+    hitSound.play(this.pos, length, 0.5);
   }
 
   render() {
