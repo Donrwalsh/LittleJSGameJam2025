@@ -35,7 +35,9 @@ At this point I'm going to spend a little bit of time doing 'market analysis' an
 
 Here's a list of existing mini-golf games: https://en.wikipedia.org/wiki/Category:Miniature_golf_video_games I'm going to review them in reverse order for no reason in particular.
 
-### Zany Golf
+### Market Research
+
+#### Zany Golf
 
 https://www.youtube.com/watch?v=dSwQSQZWhD4
 
@@ -46,7 +48,7 @@ https://www.youtube.com/watch?v=dSwQSQZWhD4
 - Game gives a Par and Strokes left readout on the screen.
 - At about 13:30 there's a hole that plays like ball breaker, nice.
 
-### Wonderputt Forever
+#### Wonderputt Forever
 
 https://www.youtube.com/watch?v=-yAv7PC7KMA&list=PLLR2uyH1QsP5ivPkXlapqmxLn22VoWHmq
 
@@ -54,7 +56,7 @@ https://www.youtube.com/watch?v=-yAv7PC7KMA&list=PLLR2uyH1QsP5ivPkXlapqmxLn22VoW
 - Graphics are much more sophisticated. It is still isometric but I can't see pixels anymore. The game makes great use of particle effects for various non-standard events like the ball colliding with a rock or spending too much time out of bounds where it combusts.
 - This game has some pretty awesome level designs!
 
-### Wonderputt
+#### Wonderputt
 
 https://www.youtube.com/watch?v=8N3NswMOIAU
 
@@ -62,7 +64,7 @@ https://www.youtube.com/watch?v=8N3NswMOIAU
 - This game is beautiful. Reminds me of Monument Valley.
 - Overall, the experience seems very similar to Wonderputt Forever at least in terms of putting. Level design is even better in this one it seems.
 
-### Putt & Putter
+#### Putt & Putter
 
 https://www.youtube.com/watch?v=qepAjzRgfm4
 
@@ -72,7 +74,7 @@ https://www.youtube.com/watch?v=qepAjzRgfm4
 - The ball direction is locked in and then a power bar moves up and down and the player stops it at a certain point which launches the ball. Interesting 2 step process.
 - Game only has 18 holes. Probably a solid resource for inspiration. Take for instance hole 5. Uses ramps and a single teleport mechanism with corners to make an interesting game experience.
 
-### Miniature Golf
+#### Miniature Golf
 
 https://www.youtube.com/watch?v=BuZyJbjQ5S4
 
@@ -81,7 +83,7 @@ https://www.youtube.com/watch?v=BuZyJbjQ5S4
 - "I have to hit the yellow square here to the blue square over here while avoiding the red square" is an accurate description of gameplay haha.
 - Striking the ball seems to be a free-floating blue square that you maneuver wherever and then collide with the ball to get it to move. Hella primitive. . . it's actually really hard to see how it works from this video.
 
-### Mini-Putt
+#### Mini-Putt
 
 https://www.youtube.com/watch?v=XtJPeyoDEpM
 
@@ -91,20 +93,20 @@ https://www.youtube.com/watch?v=XtJPeyoDEpM
 - When putting there are two intensity dials? Maybe one is for chipping? I wonder how they manage that in 2d gameplay?
 - Putting sprite reacts to what happens. Celebrates if the ball goes in the hole and cringes if the ball goes out of bounds. Kinda fun.
 
-### Krazy Ace Miniature Golf
+#### Krazy Ace Miniature Golf
 
 https://www.youtube.com/watch?v=ijngsHXmgQY
 
 - I think this is isometric, but it looks a little different than the other ones I've been seeing. It's doing the same kind of stuff: representing inclines with darker colors. The physics in this one seems more advanced than others. It hides the pixel grid quite well.
 - Dang, the way that they do physics makes it very easy to pull off a ball flying through the air or getting some lift off of a ramp. Hole 2 with the water fountain is impressive.
 
-### Goofy Golf Deluxe
+#### Goofy Golf Deluxe
 
 https://www.youtube.com/watch?v=YKRuJFWRx-4
 
 - Interesting. Top-down but with heavier graphics and good physics. This game actually places a player sprite on the field and you maneuver them so that the putt arrow points where you want it to and the sprite follows the ball. Human sprite walks over terrain the ball can't and so on. Seems to work pretty well and the intensity of the stroke is entirely conveyed by the golfing sprite.
 
-### Golfinity
+#### Golfinity
 
 https://www.youtube.com/watch?v=-iqo4UZwAe8&list=PLQwPrpHYLKZPwZsKdlYnNwBz8OeeoB_qw
 
@@ -112,7 +114,7 @@ https://www.youtube.com/watch?v=-iqo4UZwAe8&list=PLQwPrpHYLKZPwZsKdlYnNwBz8OeeoB
 - I find the videos for this one annoying, but the gameplay and the way the levels are designed and laid out is very intriguing and probably worthy of further exploration.
 - This game seems designed for mobile and probably has some great insight into that direction if I want to explore it.
 
-### Skipped Over:
+#### Skipped Over:
 
 - I decided I've seen enough and did not make it to the following:
 
@@ -132,10 +134,26 @@ https://www.youtube.com/watch?v=-iqo4UZwAe8&list=PLQwPrpHYLKZPwZsKdlYnNwBz8OeeoB
 - Toy Golf ~ Gizmodo 2005 release, no YouTube presence at all.
 - Rocketbowl ~ I guess it's a bowling game that plays like mini-golf? Or maybe there's a sub-game here. Idk, didn't spend much time on this.
 
-## Conclusions:
+#### Conclusions:
 
 - Isometric is the most common choice for physical game layout. I haven't touched this at all in LittleJS or elsewhere for that matter, so I'd like to learn about what I'd be getting into here.
 - Most games handle striking the ball in similar mechanical ways but represent those mechanics differently.
 - In order to build interesting courses, I'll need a toolbox of hazards and hole features to pull from. I can start with simple ramps and portals which would be sufficient for a complete (albeit boring) game. I can then iterate from there.
 - Much of the character of these games comes through in the hole designs and how these environments are shown to the players.
 - Sound totally slipped my mind but will likely be an important piece of the puzzle for creating a convincing simulation.
+
+### Isometric Projection
+
+https://www.theengineeringchoice.com/what-is-isometric-projection/
+
+This is a super helpful resource. I took a look through the LittleJS examples and documentation for any isometric hit and came up empty, that's a bummer. I did find a pretty great pool example that showcases how a top-down version might work: https://killedbyapixel.github.io/LittleJS/examples/?example=Box2d+Pool.
+
+Ok yeah, did some more research and this question has been posed before on the discord. LittleJS isn't really suited for isometric stuff and I doubt I'd be able to build my own thing in a week, so top-down it is.
+
+### The Ball
+
+I want to put a ball on the screen so I'm going to create an empty project in this repo. I'm using the empty project example provided by LittleJS and I'm downloading the latest release and placing that in a dist folder so my local preview will work. This makes me think about how I need to figure out what launching a game looks like so I'll make a todo section and add that to it.
+
+## TODO:
+
+- [ ] Publishing the game and submitting it to the Jam.
